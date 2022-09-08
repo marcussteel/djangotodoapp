@@ -3,12 +3,24 @@
     
     {% block content %}
 
-        {% for todo in todos  %}
-           
+        <div class="container">
+
+        <div>
+
+            <form action="/add/" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="ADD">
+    </form>
+</div>
+          <div>
+    {% for todo in todos  %}
             <ul>
-                <li>{{todo}}</li>
+                <li>{{todo}} </li>
+               
             </ul>
         {% endfor %}
-    
+    </div> 
+    </div>
     {% endblock content %}
 
