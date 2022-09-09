@@ -7,18 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
 <title>Let's Go Camping</title>
 </head>
 <body>
        <!-- navabar start -->
-    <nav class="navbar navbar-expand-lg navbar navbar-dark ">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark mb-4 ">
         <div class="container-fluid ">
             <a class="navbar-brand" href="/">
-            <img src="{% static 'todo/images/camping2.png' %}" alt="Hi!" width="145" height="90">
+            <img src="{% static 'todo/images/camping.png' %}" alt="Hi!" width="145" height="90">
             Camping Todo App</a>
         </div>
     </nav>
+        {% if messages %} 
+        {% for message in messages %} 
+            {% if message.tags == "warning" %}
+                <div id="warnings" class="message">{{ message }}</div>
+            {% else %}
+                <div id="successes" class="message">{{ message }}</div>
+            {% endif %} 
+        {% endfor %} 
+    {% endif %}
+
     
     {% block content %}
 
@@ -26,5 +36,6 @@
     {% endblock content %}
     <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="{% static 'todo/js/timeout.js' %}"></script>
 </body>
 </html>
