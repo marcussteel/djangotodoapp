@@ -14,12 +14,12 @@
     </form>
 </div>
           <div>
-    {% for todo in todos  %}
-            <ul>
-                <li>{{todo}} </li>
-               
+   
+            <ul> {% for todo in todos  %}
+                <li><a href="{% url 'update' todo.id %}">{{todo}}</a>   </li>
+               {% endfor %}
             </ul>
-        {% endfor %}
+        
     </div> 
     </div>
     {% endblock content %}
