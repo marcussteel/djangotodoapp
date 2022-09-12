@@ -1,0 +1,39 @@
+.navbar {
+    background-color: cadetblue;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#warnings {
+    background-color: rgb(134, 50, 50);
+    color: aliceblue;
+    margin: auto;
+    width: 40%;
+    height: 30%;
+    text-align: center;
+}
+
+#successes {
+    background-color: rgb(18, 68, 18);
+    color: rgb(231, 200, 158);
+    margin: auto;
+    width: 40%;
+    height: 30%;
+    text-align: center;
+}
+
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2017/01/24/03/53/plant-2004483__480.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+textarea {
+    max-width: 100%
+}

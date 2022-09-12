@@ -4,6 +4,7 @@
 
 {% block content %}
 
+    {% if user.is_authenticated %} 
 <div>
     <div class="container pt-4">
         <div class="row mt-2 p-0">
@@ -92,6 +93,16 @@
             </div>
         </div>
     </div>
+
+           
+        
+    {% else %}
+        <h1>Hello, please login to see the page.</h1>
+        
+
+        
+    {% endif %}
+
 
 
 
