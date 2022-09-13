@@ -15,9 +15,8 @@ def home(request):
         "todos" : todos,
         'form' : form
     }
-    
+    return render(request, 'todo/home.html', context)
 
-    return render(request, 'todo/home.html',context)
 
 def todo_create(request):
     form = TodoForm()
@@ -26,7 +25,7 @@ def todo_create(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Todo Created Succesfully")
-            return redirect ('home')
+            return redirect('home2')
 
     context = {
         "form" : form
@@ -40,7 +39,7 @@ def todo_update(request,id):
         form = TodoForm(request.POST,instance=todo)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('home2')
     
     context={
         'todo':todo,
@@ -55,7 +54,7 @@ def todo_delete(request,id):
     if request.method == "POST":
         todo.delete()
         messages.warning(request, "Todo Deleted Succesfully")
-        return redirect('home')
+        return redirect('home2')
     context = {
         'todo': todo,
   

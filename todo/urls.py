@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
 
-    path('', home, name='home'),
+    path('', home, name='home2'),
     path("add/", todo_create, name="add"),
     path("update/<int:id>", todo_update, name="update"),
     path("delete/<int:id>", todo_delete, name="delete"),

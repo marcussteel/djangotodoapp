@@ -13,7 +13,7 @@
                     <h2>Add ToDo</h2>
                 </div>
                 <div class="p-4">
-                    <form action="/add/" method="POST">
+                    <form action="/todo/add/" method="POST">
                         {% csrf_token%} {{form.as_p}}
                         <hr>
                         <input type="submit" value="ADD" class="btn btn-success">
@@ -40,6 +40,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Title</th>
+                                    <th>Description</th>
                                     <th>Priority</th>
                                     <th>Delete</th>
                                     <th>Update</th>
@@ -50,6 +51,7 @@
                                 <tr>
                                     <td>{{forloop.counter}}</td>
                                     <td>{{todo.title}}</td>
+                                    <td>{{todo.description}}</td>
                                     {% if todo.is_done == True%}
                                     <td>
                                         <a href="{% url 'done' todo.id %}">✅</a>
